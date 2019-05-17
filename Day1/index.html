@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Page Title</title>
+    <style>
+        p .intro {
+            font-size: 100px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1> Finding HTML Elements</h1>
+    <!-- Get Element by ID -->
+    <!-- <p id="getbyid">This is a Paragraph Text</p>
+    <button onClick="getbyidfunction()">Click Me</button> -->
+
+    <!-- Get Element by Tag -->
+    <!-- <p>This is a Paragraph Text</p>
+    <button onClick="getbytagfunction()">Click Me</button> -->
+
+    <!-- Get Element by Class -->
+    <!-- <p class="getbyclass">This is a Paragraph Text</p>
+    <button onClick="getbyclassfunction()">Click Me</button> -->
+
+    <!-- Get Element by CSS selectors -->
+    <!-- <p class="intro">This is a Paragraph Text</p>
+    <p class="intro">This is a Paragraph Text</p>
+    <button onClick="getbycssfunction()">Click Me</button> -->
+
+    <!-- Get Element by HTML Object Collections -->
+    <!-- <form id="frm1" action="">
+        First name: <input type="text" name="fname" value="Donald"><br>
+        Last name: <input type="text" name="lname" value="Duck"><br><br>
+        <input type="submit" value="Submit">
+    </form>
+    <p>Click "Try it" to display the value of each element in the form.</p>
+    <button onclick="getbyhtmlobjectsfunction()">Try it</button>
+
+    <p id="demo"></p> -->
+
+
+</body>
+<script>
+
+    // --> Get Element by ID
+    // function getbyidfunction() {
+    //     document.getElementById("getbyid").innerHTML = "We are updating the text";
+    // }
+
+    // --> Get Element by Tag
+    // function getbytagfunction() {
+
+    //     //1st version of updating
+    //     // document.getElementsByTagName("p")[0].innerHTML = "We are updating the text";
+
+    //     //2dnd version of updating
+    //     // var x = document.getElementsByTagName("p");
+    //     // x[0].innerHTML = "We are updating the text";
+
+    // }
+
+    // --> Get Element by Class
+    // function getbyclassfunction() {
+
+    //     //1st version of updating
+    //     // document.getElementsByClassName("getbyclass")[0].innerHTML = "We are updating the text";
+
+    //     //2dnd version of updating
+    //     var x = document.getElementsByClassName("getbyclass");
+    //     x[0].innerHTML = "We are updating the text";
+
+    // }
+
+
+    // --> Get Element by CSS selectors
+    function getbycssfunction() {
+
+        //1st version of updating
+        // document.querySelectorAll("p.intro")[0].innerHTML = "We are updating the text";
+        // document.querySelectorAll("p.intro")[1].innerHTML = "We are updating the text";
+
+
+
+        //2nd version of updating
+        // var x = document.querySelectorAll("p.intro");
+        // x[0].innerHTML = "We are updating the text";
+
+        //using For loop to loop through the elements
+        var x = document.querySelectorAll("p.intro");
+        if (x.length == 0) {
+            document.write("No elements to loop")
+        }
+        else {
+            for (var i = 0; i < x.length; i++) {
+                x[i].innerHTML = "We are updating the text";
+            }
+        }
+    }
+
+
+    // --> Get Element by HTML Object Collections
+    function getbyhtmlobjectsfunction() {
+        var x = document.forms["frm1"];
+        var text = "";
+        var i;
+        for (i = 0; i < x.length; i++) {
+            text += x.elements[i].value + "<br>";
+        }
+        document.getElementById("demo").innerHTML = text;
+    }
+
+
+    //Simple Calculator
+    var a = parseInt(prompt("Enter the 1st Value"));
+    var b = parseInt(prompt("Enter the 2nd value"));
+    // var a = (prompt("Enter the 1st Value"));
+    // var b = (prompt("Enter the 2nd value"));
+    // console.log(parseInt(a + b));
+    // console.log(+a + +b)
+
+    // var a = prompt();
+    // var b = prompt();
+    console.log(a + b);
+
+
+
+</script>
+
+</html>
